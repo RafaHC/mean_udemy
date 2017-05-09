@@ -4,12 +4,12 @@ const mongoose = restful.mongoose;
 
 const creditSchema = new mongoose.Schema({
 	name: {type:String, required: true},
-	value: {type:Number, required: true}
+	value: {type:Number, required: true, min:50}
 })
 
 const debtSchema = new mongoose.Schema({
 	name: {type:String, required: true},
-	value: {type:Number, required: true},
+	value: {type:Number, required: true, min:10},
 	status: { type: String,required:false,uppercase:true,
 		enum: ['PAGO','PENDENTE','AGENDADO']
 	}
